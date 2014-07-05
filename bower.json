@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "melonJS": "https://github.com/melonjs/melonJS.git",
     "lodash": "https://github.com/lodash/lodash.git"
   }
 }

@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
-  
+  'use strict';
+
   grunt.initConfig({
     compass: {
       dev: {
@@ -12,6 +13,8 @@ module.exports = function(grunt) {
     copy: {
       vendor: {
         files: {
+          'build/vendor/melonJS-1.0.2.js': 'vendor/melonJS-1.0.2.js',
+          'build/vendor/melonJS-1.0.2-min.js': 'vendor/melonJS-1.0.2-min.js',
           'build/vendor/lodash.min.js': 'bower_components/lodash/dist/lodash.min.js'
         }
       },
@@ -41,7 +44,8 @@ module.exports = function(grunt) {
         tasks: [ 'copy:html' ]
       },
       browserify: {
-        files: [ 'src/js/**/*' ]
+        files: [ 'src/js/**/*' ],
+        tasks: [ 'browserify:dev' ]
       }
     },
     express: {
