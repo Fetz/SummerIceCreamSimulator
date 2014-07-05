@@ -38,7 +38,7 @@
         <key>dataFormat</key>
         <string>css</string>
         <key>textureFileName</key>
-        <filename>map.png</filename>
+        <filename>../data/img/sprites/map.png</filename>
         <key>flipPVR</key>
         <false/>
         <key>ditherType</key>
@@ -131,7 +131,7 @@
             <key>data</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>map.css</filename>
+                <filename>../data/img/sprites/map.css</filename>
             </struct>
             <key>header</key>
             <struct type="DataFile">

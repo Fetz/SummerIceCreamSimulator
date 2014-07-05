@@ -38,7 +38,7 @@
         <key>dataFormat</key>
         <string>css</string>
         <key>textureFileName</key>
-        <filename>products.png</filename>
+        <filename>../data/img/sprites/products.png</filename>
         <key>flipPVR</key>
         <false/>
         <key>ditherType</key>
@@ -131,7 +131,7 @@
             <key>data</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>products.css</filename>
+                <filename>../data/img/sprites/products.css</filename>
             </struct>
         </map>
         <key>multiPack</key>

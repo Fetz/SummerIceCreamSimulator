@@ -27,25 +27,9 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,
-            cwd: 'src/game_data/',
+            cwd: 'src/data/',
             src: ['**'],
-            dest: 'build/game_data/' 
-          }
-        ]
-      },
-      sprites: {
-        files: [
-          {
-            expand: true,
-            cwd: 'src/sprites/bg/',
-            src: ['**'],
-            dest: 'build/game_data/img/' 
-          },
-          {
-            expand: true,
-            cwd: 'src/sprites/texture/',
-            src: ['**'],
-            dest: 'build/game_data/img/sprites/'
+            dest: 'build/data/' 
           }
         ]
       }

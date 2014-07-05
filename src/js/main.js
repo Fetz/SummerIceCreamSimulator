@@ -4,7 +4,6 @@ var game = require('./game/game');
 function startGame() {
   game.onload();
   mobileFix();
-  console.log('game start!!!');
 }
 
 function mobileFix() {
