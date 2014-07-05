@@ -22,6 +22,32 @@ module.exports = function(grunt) {
         files: {
           'build/index.html': 'src/html/index.html'
         }
+      },
+      gamedata: {
+        files: [
+          {
+            expand: true,
+            cwd: 'src/game_data/',
+            src: ['**'],
+            dest: 'build/game_data/' 
+          }
+        ]
+      },
+      sprites: {
+        files: [
+          {
+            expand: true,
+            cwd: 'src/sprites/bg/',
+            src: ['**'],
+            dest: 'build/game_data/img/' 
+          },
+          {
+            expand: true,
+            cwd: 'src/sprites/texture/',
+            src: ['**'],
+            dest: 'build/game_data/img/sprites/'
+          }
+        ]
       }
     },
     browserify: {
