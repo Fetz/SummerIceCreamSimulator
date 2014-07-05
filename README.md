@@ -1,0 +1,4 @@
+SummerIceCreamSimulator
+=======================
+
+Game Jam competition
