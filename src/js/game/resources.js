@@ -6,13 +6,13 @@ var resources = [
 	 */
 	
 	{
-		name: 'title_screen',
+		name: 'uk_blank_map',
 		type: 'image',
 		src: 'data/img/uk_blank_map.gif'
 	},
 
 	{
-		name: 'map_icons',
+		name: 'map',
 		type: 'image',
 		src: 'data/img/sprites/map.png'
 	},
