@@ -12,7 +12,7 @@ module.exports = function(grunt) {
     copy: {
       vendor: {
         files: {
-          'build/vendor/lodash.min.js':   'bower_components/dist/lodash.min.js'
+          'build/vendor/lodash.min.js': 'bower_components/lodash/dist/lodash.min.js'
         }
       },
       html: {
