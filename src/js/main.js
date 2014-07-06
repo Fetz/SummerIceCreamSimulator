@@ -39,7 +39,8 @@ function startGame(data) {
   player.start(data);
   map.prettify();
   map.getMap().featureLayer.on('click', function(e) {
-    var title = e.layer.options.title;
+    var layer = e.layer;
+    var title = layer.options.title;
     body.toggleClass('show-travel', player.canMoveToPlace(title));
     body.toggleClass('setup-shop', player.getPlaceTitle() == title);
     $('.travelButton').on('click', function(e) {
@@ -50,6 +51,10 @@ function startGame(data) {
         nextTurn();
         body.toggleClass('setup-shop', true);
       }
+      e.stopPropagation();
+    });
+    $('.prettyPopup').on('click', function(e) {
+      layer.closePopup();
     });
   });
   updateUI();
