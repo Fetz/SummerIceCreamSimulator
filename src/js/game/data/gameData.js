@@ -6,7 +6,7 @@ var settings = require('../settings').model,
     Weather = require('./weather'),
     Upgrades = require('./upgrades');
 
-var rawData, data;
+var rawData, data, markers, map;
 
 function loadData(callback) {
     Tabletop.init( { key: settings.url,
@@ -20,7 +20,7 @@ function loadData(callback) {
 
 function buildData(callback) {
     data = {
-        places: Places.create(rawData[settings.places]),
+        places: Places.create(rawData[settings.places], map, markers.slice(0)),
         events: Events.create(rawData[settings.events]),
         products: Products.create(rawData[settings.products]),
         audience: Audience.create(rawData[settings.audience]),
@@ -31,7 +31,9 @@ function buildData(callback) {
 }
 
 module.exports = {
-    getData: function(callback) {
+    start: function(mapParam, mapMarker, callback) {
+        map = mapParam;
+        markers = mapMarker;
         if (!data)
             loadData(callback);
         else

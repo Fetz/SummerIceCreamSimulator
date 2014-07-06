@@ -2,8 +2,8 @@ var clock = require('./game/gameClock'),
     map = require('./game/map'),
     gameData = require('./game/data/gameData');
 
-map.createMap(function (argument) {
-  gameData.getData(startGame);
+map.createMap(function(mapLayer, markers) {
+  gameData.start(mapLayer, markers, startGame);
 });
 
 function startGame() {

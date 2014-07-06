@@ -9,10 +9,13 @@ module.exports = {
         startingMoney: 100
     },
     map: {
-        minZoom: 8,
-        maxZoom: 8,
-        zoomControl: false,
-        maxBounds: [ [49, -8], [59, 2.3] ]
+        id: 'brotherolder.iml96813',
+        options: {
+            minZoom: 8,
+            maxZoom: 8,
+            zoomControl: false,
+            maxBounds: [ [49, -8], [59, 2.3] ]
+        }
     },
     model: {
         url: '1NV5jsIxNdtb-jpTKkyFUOH0ziPV-enQK-Cuuf15rRJw',

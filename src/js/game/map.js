@@ -1,67 +1,21 @@
-var settings = require('./settings').map;
+var settings = require('./settings').map,
+    map;
 
-function testLimits(map) {
-    [
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ],
-        [ [49, -8], [59, 2.3] ]
-    ].forEach(function(coordinates) {
-        L.geoJson({
-            type: 'Feature',
-            geometry: {
-                type: 'LineString',
-                coordinates: coordinates
-            },
-            properties: {
-                'stroke': '#ff8888',
-                'stroke-opacity': 1,
-                'stroke-width': 4
-            }
-        }, { style: L.mapbox.simplestyle.style }).addTo(map);
-    });
-    
-}
+// function testLimits(map) {
+//     [
+//         [[49, -8], [59, 2.3]],
+//     ].forEach(function(coordinates) {
+//         console.log(L.polyline(coordinates, {color: '#000'}).addTo(map));
+//     });
+// }
 
 function createMap(onReady) {
-    var layer = L.mapbox.map('map', 'brotherolder.iml96813', settings);
-    layer.on('ready', function() {
-        onReady('mapbox ready');
-        testLimits(layer);
-        // call .getTileJSON and investigate its properties
+    map = L.mapbox.map('map', settings.id, settings.options);
+    map.on('ready', function() {
+        map.featureLayer.on('ready', function() {
+            onReady(map, map.featureLayer.getLayers());
+        });
+        // testLimits(map);
     });
 }
 
