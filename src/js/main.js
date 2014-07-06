@@ -1,37 +1,13 @@
-var game = require('./game/game');
+var clock = require('./game/gameClock'),
+    map = require('./game/map'),
+    gameData = require('./game/data/gameData');
 
+map.createMap(function (argument) {
+  gameData.getData(startGame);
+});
 
 function startGame() {
-  game.onload();
-  mobileFix();
+  clock.start();
+  console.log('startGame!!!');
 }
 
-function mobileFix() {
-  if (me.device.isMobile && !navigator.isCocoonJS) {
-
-    window.document.addEventListener('touchmove', function (e) {
-
-      e.preventDefault();
-      window.scroll(0, 0);
-      return false;
-
-    }, false);
-
-    // Scroll away mobile GUI
-    (function () {
-
-      window.scrollTo(0, 1);
-      me.video.onresize(null);
-
-    }).defer();
-
-    me.event.subscribe(me.event.WINDOW_ONRESIZE, function (e) {
-
-      window.scrollTo(0, 1);
-
-    });
-
-  }
-}
-
-window.onReady(startGame);

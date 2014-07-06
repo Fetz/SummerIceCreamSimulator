@@ -13,9 +13,8 @@ module.exports = function(grunt) {
     copy: {
       vendor: {
         files: {
-          'build/vendor/melonJS-1.0.2.js': 'vendor/melonJS-1.0.2.js',
-          'build/vendor/melonJS-1.0.2-min.js': 'vendor/melonJS-1.0.2-min.js',
-          'build/vendor/lodash.min.js': 'bower_components/lodash/dist/lodash.min.js'
+          'build/vendor/lodash.min.js': 'bower_components/lodash/dist/lodash.min.js',
+          'build/vendor/tabletop.js': 'bower_components/tabletop/src/tabletop.js'
         }
       },
       html: {

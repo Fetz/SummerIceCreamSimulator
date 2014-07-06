@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "lodash": "https://github.com/lodash/lodash.git"
+    "lodash": "https://github.com/lodash/lodash.git",
+    "tabletop": "https://github.com/jsoma/tabletop.git"
   }
 }

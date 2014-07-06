@@ -9,7 +9,8 @@
         <title>Summer Ice Cream Simulator</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.js'></script>
+        <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css' rel='stylesheet' />
         <link rel="stylesheet" href="css/style.css">
         <script src="//localhost:3001/livereload.js"></script>
     </head>
@@ -18,11 +19,11 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
-        <div id="screen"></div>
+        <div id='map'></div>
 
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="vendor/tabletop.js"></script>
         <script src="vendor/lodash.min.js"></script>
-        <script src="vendor/melonJS-1.0.2.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>
