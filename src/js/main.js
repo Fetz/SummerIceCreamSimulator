@@ -1,6 +1,8 @@
 var clock = require('./game/gameClock'),
     map = require('./game/map'),
-    gameData = require('./game/data/gameData');
+    player = require('./game/player'),
+    gameData = require('./game/data/gameData'),
+    gameStart = false;
 
 map.createMap(function(mapLayer, markers) {
   gameData.start(mapLayer, markers, startGame);
@@ -21,11 +23,21 @@ $('#buy').on('click', function() {
   products.toggleClass('showUI');
 });
 
-function startGame() {
+function startGame(data) {
+  console.log('startGame', data);
   clock.start();
-  map.createPlayer([52, 1]);
+  player.start(data);
+  map.getMap().featureLayer.on('click', function(e) {
+    player.moveToPlace(e.layer.options.title);
+  });
   updateUI();
+  gameStart = true;
 }
+
+window.requestAnimationFrame = function() {
+  if (gameStart)
+    player.update();
+};
 
 function nextTurn() {
   clock.nextTurn();

@@ -9,15 +9,15 @@ function Place(defaultData, marker) {
 
 Place.prototype.getTitle = function() {
   return this._marker.options.title;
-}
+};
 
 Place.prototype.getLatLong = function() {
-  return [this._marker.feature.geometry.coordinates[1], this._marker.feature.geometry.coordinates[0]]
-}
+  return [this._marker.feature.geometry.coordinates[1], this._marker.feature.geometry.coordinates[0]];
+};
 
 Place.prototype.getConnected = function() {
   return this._defaultData.connectedlocation;
-}
+};
 
 function setLines() {
   connections = {};
@@ -71,6 +71,7 @@ module.exports = {
           }
         });
         setLines();
+        return places;
     },
     findLocation: findLocation,
     getConnections: function(place) {

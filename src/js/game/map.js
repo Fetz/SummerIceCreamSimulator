@@ -11,33 +11,39 @@ function createMap(onReady) {
 }
 
 function createPlayer (coord) {
-    // map.featureLayer.setGeoJSON({
-    //     'type': 'Feature',
-    //     'geometry': {
-    //         'type': 'Point',
-    //         'coordinates': coord
-    //     },
-    //     'properties': {
-    //         'title': 'Ice cream truck',
-    //         'icon': {
-    //             'iconUrl': '/data/img/truck.png',
-    //             'iconSize': [50, 50], // size of the icon
-    //             'iconAnchor': [25, 25], // point of the icon which will correspond to marker's location
-    //             'popupAnchor': [0, -25], // point from which the popup should open relative to the iconAnchor
-    //             'className': 'dot'
-    //         }
-    //     }
-    // });
-    // var marker = L.marker(coord, {
-    //   icon: L.mapbox.marker.icon({
-    //     'iconUrl': '/data/img/truck.png',
-    //     'iconSize': [128, 64],
-    //     'iconAnchor': [64, 32]
-    //   })
-    // }).addTo(map);
+    var player = {
+        'type': 'Feature',
+        'geometry': {
+            'type': 'Point',
+            'coordinates': coord
+        },
+        'properties': {
+            'title': 'Ice cream truck',
+            'icon': {
+                'iconUrl': 'data/img/truck.png',
+                'marker-symbol': 'star',
+                'iconSize': [96, 48],
+                'iconAnchor': [48, 24],
+                'popupAnchor': [0, -25],
+                'className': 'dot'
+            }
+        }
+    };
+    var geoJSON = map.featureLayer.getGeoJSON();
+    geoJSON.features.push(player);
+    map.featureLayer.setGeoJSON(geoJSON);
+    window.map = map;
+
+    var marker = L.marker(coord);
+    marker.setIcon(L.icon(player.properties.icon));
+    marker.addTo(map);
+    return marker;
 }
 
 module.exports = {
     createMap: createMap,
-    createPlayer: createPlayer
+    createPlayer: createPlayer,
+    getMap: function() {
+        return map;
+    }
 };

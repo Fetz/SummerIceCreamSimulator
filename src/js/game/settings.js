@@ -5,7 +5,7 @@ module.exports = {
         endDate: '19/09/2014'
     },
     player: {
-        startingPoint: 'london',
+        startingPoint: 'London',
         startingMoney: 100
     },
     map: {
