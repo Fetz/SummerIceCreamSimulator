@@ -20,6 +20,10 @@ Place.prototype.getConnected = function() {
   return this._defaultData.connectedlocation;
 };
 
+Place.prototype.type = function() {
+  return this._defaultData.type;
+};
+
 Place.prototype.getPopulation = function() {
   var maxpopulation = Number(this._playableData.maxpopulation);
   var minpopulation = Number(this._playableData.minpopulation);
@@ -94,7 +98,6 @@ module.exports = {
         places = [];
         map = mapParam;
         rawData.elements.forEach(function(pl, index) {
-
           for (var i = markers.length - 1; i >= 0; i--) {
             if (pl.location.indexOf(markers[i].options.title) != -1) {
               places.push(new Place(pl, markers.splice(i, 1)[0]));

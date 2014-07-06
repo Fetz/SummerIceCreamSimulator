@@ -12,19 +12,17 @@ function createMap(onReady) {
 }
 
 function prettyPopup() {
-    // var geoJSON = map.featureLayer.getGeoJSON();
-    // console.log(geoJSON.features);
-    // geoJSON.features.eachLayer(function(layer) {
+    map.featureLayer.eachLayer(function(layer) {
+        var place = gameData.getPlaces().findLocation(layer.options.title);
 
-    //     var place = gameData.getPlaces.findLocation(placeName);
-    //     console.log(place);
-    //     // here you call `bindPopup` with a string of HTML you create - the feature
-    //     // properties declared above are available under `layer.feature.properties`
-    //     var content = '<div class="prettyPopup">\
-    //         <h2>' + layer.feature.properties.title + '<\/h2>';
+        if (!place)
+            return;
 
-    //     layer.bindPopup(content);
-    // });
+        var content = '<div class="prettyPopup ' + place.type() + '">\
+            <h2>' + layer.options.title + '<\/h2>';
+
+        layer.bindPopup(content);
+    });
 }
 
 function prettify() {
