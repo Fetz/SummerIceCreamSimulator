@@ -9,6 +9,7 @@
         <title>Summer Ice Cream Simulator</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
         <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.js'></script>
         <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css' rel='stylesheet' />
         <link rel="stylesheet" href="css/style.css">
@@ -43,10 +44,18 @@
         </div>
         
         <div class="controls">
-            <p id="money">0£</p>
-            <time id="day"></time>
-            <button id="nextTurn">Next Turn</button>
-            <button id="buy">Buy</button>
+            <h2><time id="hours">Morning</time></h2>
+            <div class="day-group">
+                <time id="week-day"></time>
+                <time id="day"></time>
+            </div>
+            <div class="money-group">
+                <p id="money">0£</p>
+            </div>
+            <div class="actions-control">
+                <button id="nextTurn">Next Turn</button>
+                <button id="buy">Buy</button>
+            </div>
         </div>
         <div id='map'></div>
 

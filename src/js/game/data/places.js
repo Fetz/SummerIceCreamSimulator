@@ -4,6 +4,7 @@ var places = [],
 
 function Place(defaultData, marker) {
   this._defaultData = defaultData;
+  this._playableData = _.cloneDeep(defaultData);
   this._marker = marker;
 }
 
@@ -17,6 +18,37 @@ Place.prototype.getLatLong = function() {
 
 Place.prototype.getConnected = function() {
   return this._defaultData.connectedlocation;
+};
+
+Place.prototype.getPopulation = function() {
+  var maxpopulation = Number(this._playableData.maxpopulation);
+  var minpopulation = Number(this._playableData.minpopulation);
+  return getRandomArbitrary(minpopulation, maxpopulation);
+};
+
+window.getRandomArbitrary = function(min, max) {
+  return Math.random() * (max - min) + min;
+};
+
+Place.prototype.getPopulationByProduct = function(product) {
+  var pop = this.getPopulation();
+  
+  var audience = this.getAudience();
+  var bonus = 1;
+  if (audience == product.audience)
+    bonus += 1.5;
+
+  var finalPop = Number(product.popularity()) * bonus;
+  var buyingPop = pop / 100 * finalPop;
+
+  return buyingPop;
+};
+
+Place.prototype.getAudience = function() {
+  if (!this._event)
+    return this._playableData.baseaudience;
+  else
+    return this._event;
 };
 
 function setLines() {

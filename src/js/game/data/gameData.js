@@ -47,6 +47,6 @@ module.exports = {
            cb(data);
     },
     getPlaces: function() {
-        return data;
+        return data.places;
     }
 };

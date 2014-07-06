@@ -14,7 +14,7 @@ module.exports = {
             minZoom: 8,
             maxZoom: 8,
             zoomControl: false,
-            maxBounds: [ [49, -8], [59, 2.3] ]
+            maxBounds: [ [49, -8], [59, 4] ]
         }
     },
     model: {
