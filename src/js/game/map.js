@@ -19,7 +19,8 @@ function prettyPopup() {
             return;
 
         var content = '<div class="prettyPopup ' + place.type() + '">\
-            <h2>' + layer.options.title + '<\/h2>';
+            <h2>' + layer.options.title + '<\/h2>\
+            <button class="travelButton" data-place="' + layer.options.title  + '"></button>';
 
         layer.bindPopup(content);
     });

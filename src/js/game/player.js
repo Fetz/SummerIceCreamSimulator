@@ -25,6 +25,14 @@ function createPlayer() {
     playerMarker = map.createPlayer(currentPlace.getLatLong());
 }
 
+function getPlaceTitle() {
+    return currentPlace.getTitle();
+}
+
+function canMoveToPlace(placeName) {
+    return currentPlace.getConnected().indexOf(placeName) > - 1;
+}
+
 function moveToPlace(placeName) {
     if (currentPlace.getConnected().indexOf(placeName) > - 1) {
         currentPlace = gameData.places.findLocation(placeName);
@@ -55,7 +63,9 @@ module.exports = {
     getData: function() {
         return this.data;
     },
+    canMoveToPlace: canMoveToPlace,
     moveToPlace: moveToPlace,
+    getPlaceTitle: getPlaceTitle,
     makeProfit: makeProfit,
     getMoney: getMoney
 };

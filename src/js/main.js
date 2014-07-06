@@ -12,6 +12,7 @@ var day = $('#day'),
     hours = $('#hours'),
     money = $('#money'),
     week = $('#week-day'),
+    body = $('body'),
     products = $('#products');
 
 $('.close').on('click', function(e) {
@@ -27,6 +28,7 @@ $('#buy').on('click', function() {
   products.toggleClass('showUI');
 });
 
+
 function startGame(data) {
   console.log('startGame', data);
   clock.start();
@@ -34,8 +36,17 @@ function startGame(data) {
   map.prettify();
   map.getMap().featureLayer.on('click', function(e) {
     var title = e.layer.options.title;
-    if (player.moveToPlace(title))
-      nextTurn();
+    body.toggleClass('show-travel', player.canMoveToPlace(title));
+    body.toggleClass('setup-shop', player.getPlaceTitle() == title);
+    $('.travelButton').on('click', function(e) {
+      if (body.hasClass('setup-shop')) {
+        player.makeProfit();
+        nextTurn();
+      }else if (player.moveToPlace(title)) {
+        nextTurn();
+        body.toggleClass('setup-shop', true);
+      }
+    });
   });
   updateUI();
   gameStart = true;

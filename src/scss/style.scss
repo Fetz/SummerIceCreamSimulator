@@ -20,7 +20,7 @@ html, body {
     bottom: 50px;
     right: 50px;
     width: 287px;
-    height: 419px;
+    height: 298px;
     z-index: 10;
     color: black;
     padding: 10px;
@@ -88,6 +88,7 @@ p {
 }
 
 .actions-control {
+    display: none;
     padding: 8px 40px;
     box-sizing: border-box;
 }
@@ -98,6 +99,7 @@ button {
     border: 1px solid #000;
     background: #666;
     color: white;
+    &:focus { outline: none; }
 }
 
 .close {
@@ -117,6 +119,43 @@ button {
     z-index: 20;
     padding: 20px;
     box-sizing: border-box;
+}
+
+.travelButton {
+    display: none;
+    position: absolute;
+    bottom: -20px;
+    left: 190px;
+    width: 96px;
+    height: 90px;
+    border: 0;
+    background: url(../data/img/event_button_sprite.png) no-repeat;
+    background-position: 0 0;
+    &:hover {
+        background-position: 0 -91px;
+    }
+    &:active {
+        background-position: 0 -183px;
+    }
+}
+
+.show-travel {
+    .travelButton {
+        display: block;
+    }
+}
+
+.setup-shop {
+    .travelButton {
+        display: block;
+        background-position: -96px 0;
+        &:hover {
+            background-position: -96px -91px;
+        }
+        &:active {
+            background-position: -96px -183px;
+        }
+    }
 }
 
 .showUI {

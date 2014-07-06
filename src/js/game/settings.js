@@ -6,7 +6,7 @@ module.exports = {
     },
     player: {
         startingPoint: 'London',
-        startingMoney: 100
+        startingMoney: 0
     },
     map: {
         id: 'brotherolder.iml96813',
