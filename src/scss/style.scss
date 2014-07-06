@@ -121,6 +121,21 @@ button {
     box-sizing: border-box;
 }
 
+#intro-page {
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 40;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: url(../data/img/start_screen.png) no-repeat rgba(0, 0, 0, 0.4);
+    background-position: 40% 10%;
+}
+
 .travelButton {
     display: none;
     position: absolute;

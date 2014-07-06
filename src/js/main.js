@@ -19,6 +19,10 @@ $('.close').on('click', function(e) {
   $(e.target).parent().removeClass('showUI');
 });
 
+$('#intro-page').on('click', function(e) {
+    $(e.target).css('display', 'none');
+});
+
 $('#nextTurn').on('click', function() {
   player.makeProfit();
   nextTurn();
