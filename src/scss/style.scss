@@ -183,6 +183,10 @@ button {
 .prettyPopup {
     padding-left: 240px;
     padding-top: 50px;
+    h2 {
+        font-size: 32px;
+        font-weight: bold;
+    }
 }
 
 .leaflet-popup, .Monument, .Town, .City, .Sea-side {

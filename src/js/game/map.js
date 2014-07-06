@@ -28,43 +28,35 @@ function prettyPopup() {
 
 function prettify() {
     prettyPopup();
+    prettyIcons();
 }
 
-// function createPrettyIcons() {
-//     var defaultIcon = {
-//         'type': 'Feature',
-//         'geometry': {
-//             'type': 'Point',
-//             'coordinates': [-75.00, 40]
-//         },
-//         'properties': {
-//             'title': 'Ice cream truck',
-//             'icon': {
-//                 'iconUrl': 'data/img/truck.png',
-//                 'marker-symbol': 'star',
-//                 'iconSize': [34, 34],
-//                 'iconAnchor': [17, 17],
-//                 'popupAnchor': [0, -25],
-//                 'className': 'dot'
-//             }
-//         }
-//     };
+function prettyIcons() {
 
-//     var icons = [
-//         '50x50_icon_city.png
-// 50x50_icon_monument.png
-// 50x50_icon_sea_side.png
-// 50x50_icon_town.png',
-//         '',
-//         '',
-//         ''
-//     ];
+    var typesIcons = {
+        'City': '50x50_icon_city.png',
+        'Town': '50x50_icon_town.png',
+        'Monument': '50x50_icon_monument.png',
+        'Sea-side': '50x50_icon_sea_side.png'
+    };
 
-//     var geoJSON = map.featureLayer.getGeoJSON();
-//     geoJSON.features.forEach(function() {
+    map.featureLayer.eachLayer(function(layer) {
+        var place = gameData.getPlaces().findLocation(layer.options.title);
+        if (!place)
+            return;
 
-//     });
-// }
+        var icon = {
+            'iconUrl': 'data/img/' + typesIcons[place.type()],
+            'marker-symbol': 'star',
+            'iconSize': [40, 34],
+            'iconAnchor': [20, 34],
+            'popupAnchor': [0, -25],
+            'className': 'dot'
+        };
+        layer.setIcon(L.icon(icon));
+    });
+
+}
 
 function createPlayer (coord) {
     var player = {
@@ -88,7 +80,6 @@ function createPlayer (coord) {
     var geoJSON = map.featureLayer.getGeoJSON();
     geoJSON.features.push(player);
     map.featureLayer.setGeoJSON(geoJSON);
-    window.map = map;
 
     var marker = L.marker(coord);
     marker.setIcon(L.icon(player.properties.icon));
