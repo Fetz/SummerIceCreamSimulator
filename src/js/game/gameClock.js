@@ -16,6 +16,9 @@ var gameClock = {
     },
     getDay: function () {
         return moment(startDate.toDate()).add('days', turn * speed).format('DD/MM/YYYY');
+    },
+    getTurn: function() {
+        return turn;
     }
 };
 
