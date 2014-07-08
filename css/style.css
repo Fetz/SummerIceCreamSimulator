@@ -1,0 +1,272 @@
+/* line 1, ../../src/scss/_table.scss */
+table {
+  padding-top: 10px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* line 4, ../../src/scss/style.scss */
+html, body, button {
+  font-family: 'Oswald', sans-serif;
+}
+
+/* line 8, ../../src/scss/style.scss */
+html, body {
+  background: #f3f3f3;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 16, ../../src/scss/style.scss */
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+/* line 18, ../../src/scss/style.scss */
+.controls {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  width: 287px;
+  height: 298px;
+  z-index: 10;
+  color: black;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  background: url(../data/img/mini_menu_card.png) no-repeat;
+}
+/* line 30, ../../src/scss/style.scss */
+.controls button {
+  font-size: 20px;
+  width: 150px;
+  height: 44px;
+  margin-bottom: 10px;
+  background: url(../data/img/button_sprite.png) no-repeat;
+}
+/* line 36, ../../src/scss/style.scss */
+.controls button:hover {
+  background-position: 0 -90px;
+}
+/* line 39, ../../src/scss/style.scss */
+.controls button:active {
+  background-position: 0 -46px;
+}
+
+/* line 45, ../../src/scss/style.scss */
+h2 {
+  margin-bottom: 0;
+}
+
+/* line 49, ../../src/scss/style.scss */
+p {
+  margin: 18px 0;
+}
+
+/* line 53, ../../src/scss/style.scss */
+#week-day {
+  display: block;
+}
+
+/* line 57, ../../src/scss/style.scss */
+#hours {
+  text-transform: uppercase;
+}
+
+/* line 61, ../../src/scss/style.scss */
+#hours, #week-day {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* line 66, ../../src/scss/style.scss */
+#day {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* line 71, ../../src/scss/style.scss */
+#money {
+  font-size: 41px;
+  font-weight: bold;
+  color: #dd8835;
+}
+
+/* line 77, ../../src/scss/style.scss */
+.day-group {
+  height: 104px;
+  text-align: left;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  background: url(../data/img/cloudy.png) no-repeat;
+  background-position: 80% 50%;
+}
+
+/* line 90, ../../src/scss/style.scss */
+.actions-control {
+  display: none;
+  padding: 8px 40px;
+  box-sizing: border-box;
+}
+
+/* line 96, ../../src/scss/style.scss */
+button {
+  cursor: pointer;
+  -webkit-appearance: none;
+  border: 1px solid #000;
+  background: #666;
+  color: white;
+}
+/* line 102, ../../src/scss/style.scss */
+button:focus {
+  outline: none;
+}
+
+/* line 105, ../../src/scss/style.scss */
+.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+/* line 111, ../../src/scss/style.scss */
+#products {
+  display: none;
+  position: absolute;
+  margin: 5% 20%;
+  height: 80%;
+  width: 60%;
+  overflow: hidden;
+  background: #666;
+  z-index: 20;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* line 124, ../../src/scss/style.scss */
+#intro-page {
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 40;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: url(../data/img/start_screen.png) no-repeat rgba(0, 0, 0, 0.4);
+  background-position: 40% 10%;
+}
+
+/* line 139, ../../src/scss/style.scss */
+.travelButton {
+  display: none;
+  position: absolute;
+  bottom: -20px;
+  left: 190px;
+  width: 96px;
+  height: 90px;
+  border: 0;
+  background: url(../data/img/event_button_sprite.png) no-repeat;
+  background-position: 0 0;
+}
+/* line 149, ../../src/scss/style.scss */
+.travelButton:hover {
+  background-position: 0 -91px;
+}
+/* line 152, ../../src/scss/style.scss */
+.travelButton:active {
+  background-position: 0 -183px;
+}
+
+/* line 158, ../../src/scss/style.scss */
+.show-travel .travelButton {
+  display: block;
+}
+
+/* line 164, ../../src/scss/style.scss */
+.setup-shop .travelButton {
+  display: block;
+  background-position: -96px 0;
+}
+/* line 167, ../../src/scss/style.scss */
+.setup-shop .travelButton:hover {
+  background-position: -96px -91px;
+}
+/* line 170, ../../src/scss/style.scss */
+.setup-shop .travelButton:active {
+  background-position: -96px -183px;
+}
+
+/* line 176, ../../src/scss/style.scss */
+.showUI {
+  display: block !important;
+}
+
+/* line 180, ../../src/scss/style.scss */
+.leaflet-popup-content-wrapper {
+  background: transparent;
+  box-shadow: none;
+}
+
+/* line 185, ../../src/scss/style.scss */
+.leaflet-popup-tip-container {
+  background: transparent;
+}
+
+/* line 189, ../../src/scss/style.scss */
+.leaflet-popup-tip {
+  background: transparent;
+  border: none;
+}
+
+/* line 194, ../../src/scss/style.scss */
+.leaflet-popup-close-button {
+  display: none;
+}
+
+/* line 198, ../../src/scss/style.scss */
+.prettyPopup {
+  padding-left: 240px;
+  padding-top: 50px;
+}
+/* line 201, ../../src/scss/style.scss */
+.prettyPopup h2 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* line 207, ../../src/scss/style.scss */
+.leaflet-popup, .Monument, .Town, .City, .Sea-side {
+  width: 577px;
+  height: 289px;
+}
+
+/* line 212, ../../src/scss/style.scss */
+.Monument {
+  background: url(../data/img/card_Monument.png) no-repeat;
+}
+
+/* line 216, ../../src/scss/style.scss */
+.Town {
+  background: url(../data/img/card_Town.png) no-repeat;
+}
+
+/* line 220, ../../src/scss/style.scss */
+.City {
+  background: url(../data/img/card_City.png) no-repeat;
+}
+
+/* line 224, ../../src/scss/style.scss */
+.Sea-side {
+  background: url(../data/img/card_Seaside.png) no-repeat;
+}
